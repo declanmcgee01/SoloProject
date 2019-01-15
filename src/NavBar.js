@@ -9,10 +9,10 @@ class NavBar extends Component {
                 <header className = "NavBar-header">
                     <body>
                     <div class="sidenav">
-                        <a href="#">Search</a>
-                        <a href="#">Create</a>
-                        <a href="#">Update</a>
-                        <a href="#">Delete</a>
+                        <a href="#Search">Search</a>
+                        <a href="#Create">Create</a>
+                        <a href="#Update">Update</a>
+                        <a href="#Delete">Delete</a>
                     </div>
                     </body>
                 </header>
