@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
 
-class Delete extends Component {
+class Search extends Component {
     render(){
         return(
-            <div className = "Delete">
-                <div className = "Delete-header">
+            <div className = "Search">
+                <div className = "Search-header">
                     <form>
                     <br></br>
-                    <input type="text" placeholder="Delete God.." name="Delete" id = "Delete-Bar"></input>
+                    <input type="text" placeholder="Search Gods.." name="search" id = "Search-Bar"></input>
                     <input type="submit" value="Submit" onSubmit={this.update}></input>
                     </form>
                 </div>
@@ -16,4 +16,4 @@ class Delete extends Component {
         );
     }
 }
-export default Delete;
+export default Search;
