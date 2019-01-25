@@ -5,6 +5,7 @@ import Create from './Create';
 import Search from './Search';
 import Update from './Update';
 import Delete from './Delete';
+import Home from './Home';
 
 
 class NavBar extends Component {
@@ -13,18 +14,16 @@ class NavBar extends Component {
             <BrowserRouter>
             <div>
             <div className = "NavBar">
-                <header className = "NavBar-header">
-                    <body>
-                    <div class="sidenav">
-                        <li><Link to="/Search">Search</Link></li>
+                    <div className="sidenav">
+                        <li><Link to="/home">Home</Link></li>
+                        <li><Link to="/search">Search</Link></li>
                         <li><Link to="/create">Create</Link></li>
                         <li><Link to="/update">Update</Link></li>
                         <li><Link to="/delete">Delete</Link></li>
                     </div>
-                    </body>
-                </header>
             </div>
-          <Route exact path='/search' component={Search}/>
+          <Route exact path='/home' component={Home}/>
+          <Route path='/search' component={Search}/>
           <Route path='/create' component={Create}/>
           <Route path='/update' component={Update}/>
           <Route path='/delete' component={Delete}/>
