@@ -1,15 +1,41 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 
 class Delete extends Component {
+
+    constructor(){
+        super();
+        this.state = {
+            godID: "",
+        }
+        this.update = this.update.bind(this);
+        this.handleInputID = this.handleInputID.bind(this);
+    }
+
+     handleInputID = (event) => {
+        this.setState({godID:event.target.value});
+    }
+
+    update = (event) =>{
+        axios({
+            method:'delete',
+            url: 'http://localhost:8081/Solo-Project/api/god/deleteGod/' + this.state.godID,
+          data: {
+              godID: this.state.godID
+          }
+
+        });
+    }
+
     render(){
         return(
             <div className = "Delete">
                 <div className = "Delete-header">
                     <form>
                     <br></br>
-                    <input type="text" placeholder="Delete God.." name="Delete" id = "Delete-Bar"></input>
-                    <input type="submit" value="Submit" onSubmit={this.update}></input>
+                    <input type="text" placeholder="Delete God.." onChange={(this.handleInputID)} name="Delete" id = "Delete-Bar"></input>
+                    <input type="button" value="Submit" onClick={this.update}></input>
                     </form>
                 </div>
             </div>
