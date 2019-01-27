@@ -1,21 +1,62 @@
 import React, { Component } from 'react';
-
+import axios from 'axios';
 
 class Create extends Component {
+
+    constructor() {
+        super();
+        this.state = {
+            name: "",
+            godOf: "",
+            children: "",
+            powers: ""
+        };
+    }
+
+    handleInputName = (event) => {
+        this.setState({name:event.target.value});
+    }
+
+     handleInputGodOf = (event) => {
+        this.setState({godOf:event.target.value});
+    }
+
+    handleInputChildren = (event) => {
+        this.setState({children:event.target.value});
+    }
+
+    handleInputPowers = (event) => {
+        this.setState({powers:event.target.value});
+    }
+
+     update = (event) =>{
+        axios({
+            method:'post',
+            url: 'http://localhost:8081/Solo-Project/api/god/createGod',
+            data: {
+                name: this.state.name,
+                godOf: this.state.godOf,
+                children: this.state.children,
+                powers:this.state.powers
+            }
+        });
+    }
+
+    
     render(){
         return(
             <div className = "Create">
                 <form className = "Create-Form">
                     <br></br>
-                    <input type="text" placeholder="Name" name="Name" id = "Name-Field"></input>
+                    <input type="text" placeholder="Name" value={this.state.name} onChange={(this.handleInputName)}></input>
                     <br></br>
-                    <input type="text" placeholder="God Of" name="God Of" id = "GodOf-Field"></input>
+                    <input type="text" placeholder="God Of" value={this.state.godOf} onChange={(this.handleInputGodOf)}></input>
                     <br></br>
-                    <input type="text" placeholder="Children" name="Children" id = "Children-Field"></input>
+                    <input type="text" placeholder="Children" value={this.state.children} onChange={(this.handleInputChildren)}></input>
                     <br></br>
-                    <input type="text" placeholder="Powers" name="Powers" id = "Powers-Field"></input>
+                    <input type="text" placeholder="Powers" value={this.state.powers} onChange={(this.handleInputPowers)}></input>
                     <br></br>
-                    <input type="submit" value="Submit" onSubmit={this.update}></input>
+                    <input type="button" value="Create" onClick={this.update}></input>
                 </form>
             </div>
     

@@ -8,8 +8,12 @@ class Search extends Component {
     constructor(){
         super();
         this.state = {
-            gods: '',
-            godID: ''
+            gods: "",
+            godID: "",
+            name: "",
+            godOf: "",
+            children: "",
+            powers: ""
         }
         this.update = this.update.bind(this);
         this.handleInputID = this.handleInputID.bind(this);
@@ -27,7 +31,11 @@ class Search extends Component {
             url: 'http://localhost:8081/Solo-Project/api/god/findGod/' + this.state.godID,
             responseType: 'json'
         }).then(response =>{
-            this.setState({gods:response.data.Search});
+            this.setState({godID:response.data.godID});
+            this.setState({name:response.data.name});
+            this.setState({godOf:response.data.godOf});
+            this.setState({children:response.data.children});
+            this.setState({powers:response.data.powers});
             console.log(response.data);
         })
     }
@@ -37,21 +45,21 @@ class Search extends Component {
             for(let god of this.state.gods){
                 norseGods.push(<God data = {god}/>);
             }
-            console.log(norseGods);
         }
         return(
             <div className = "Search">
             <form onSubmit={this.update}>
-            <label>
-                    God:
+                    God : 
                     <input id="text" type="text" onChange={(this.handleInputID)}></input>
-            <input type="button" onClick = {this.update} value = "Find God"></input>
-            </label><br>
-            </br>
-            </form> 
-            <p>
-                {norseGods.name}
-            </p>
+                    <input type="button" onClick = {this.update} value = "Find God"></input>
+            </form>
+                    Name : {this.state.name}
+                    <br></br>
+                    God Of : {this.state.godOf}
+                    <br></br>
+                    Children : {this.state.children}
+                    <br></br>
+                    Powers : {this.state.powers}
             </div>
         );
     }
