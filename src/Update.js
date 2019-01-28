@@ -12,6 +12,12 @@ class Update extends Component {
             children: "",
             powers: ""
         };
+        this.update = this.update.bind(this);
+        this.handleInputID = this.handleInputID.bind(this);
+        this.handleInputName = this.handleInputName.bind(this);
+        this.handleInputGodOf = this.handleInputGodOf.bind(this);
+        this.handleInputChildren = this.handleInputChildren.bind(this);
+        this.handleInputPowers = this.handleInputPowers.bind(this);
     }
 
     handleInputID = (event) => {
@@ -50,9 +56,9 @@ class Update extends Component {
  
     render(){
         return(
-            <div className = "Create">
-                <form className = "Create-Form">
-                    <input type="text" placeholder="ID" value={this.state.godID} onChange={(this.handleInputID)}></input>
+            <div className = "Update">
+                <form className = "Update-Form">
+                    <input type="text" placeholder="ID to Update" value={this.state.godID} onChange={(this.handleInputID)}></input>
                     <br></br>
                     <input type="text" placeholder="Name" value={this.state.name} onChange={(this.handleInputName)}></input>
                     <br></br>
@@ -62,7 +68,7 @@ class Update extends Component {
                     <br></br>
                     <input type="text" placeholder="Powers" value={this.state.powers} onChange={(this.handleInputPowers)}></input>
                     <br></br>
-                    <input type="button" value="Create" onClick={this.update}></input>
+                    <input type="button" value="Update" onClick={this.update}></input>
                 </form>
             </div>
     

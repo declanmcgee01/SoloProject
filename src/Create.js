@@ -11,6 +11,11 @@ class Create extends Component {
             children: "",
             powers: ""
         };
+        this.update = this.update.bind(this);
+        this.handleInputName = this.handleInputName.bind(this);
+        this.handleInputGodOf = this.handleInputGodOf.bind(this);
+        this.handleInputChildren = this.handleInputChildren.bind(this);
+        this.handleInputPowers = this.handleInputPowers.bind(this);
     }
 
     handleInputName = (event) => {
