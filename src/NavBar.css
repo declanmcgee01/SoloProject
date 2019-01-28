@@ -1,4 +1,4 @@
-@font-face{
+  @font-face{
     font-family: norseRegular;
     src: url("./norse.regular.otf") format("opentype");
   }
@@ -20,10 +20,10 @@ body {
       background-size: 100%;
       background-color: black;
       overflow-x: hidden;
-}
+} 
 
 /* Side navigation links */
-.sidenav a {
+ .sidenav a {
     color: white;
     padding: 16px;
     text-decoration: none;
@@ -33,4 +33,4 @@ body {
   .sidenav a:hover {
     background-color: #ddd;
     color: black;
-  }
+  }  

@@ -9,9 +9,9 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <NavBar/>
-          <h1 id = "Home-Page-Header">
+          {/* <h1 id = "Home-Page-Header">
             Norse Gods 
-          </h1> 
+          </h1>  */}
         </div>
       </div>
     );

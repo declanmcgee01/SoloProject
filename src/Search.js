@@ -5,7 +5,7 @@ import God from './God.js';
 
 class Search extends Component {
 
-    constructor(){
+    constructor() {
         super();
         this.state = {
             gods: "",
@@ -13,53 +13,56 @@ class Search extends Component {
             name: "",
             godOf: "",
             children: "",
-            powers: ""
+            powers: "",
+            godImage: ""
         }
         this.update = this.update.bind(this);
         this.handleInputID = this.handleInputID.bind(this);
     }
 
-    handleInputID(event){
-        this.setState({godID:event.target.value}, () => {
+    handleInputID(event) {
+        this.setState({ godID: event.target.value }, () => {
         });
 
     }
 
-    update = (event) =>{
+    update = (event) => {
         axios({
-            method:'get',
+            method: 'get',
             url: 'http://localhost:8081/Solo-Project/api/god/findGod/' + this.state.godID,
             responseType: 'json'
-        }).then(response =>{
-            this.setState({godID:response.data.godID});
-            this.setState({name:response.data.name});
-            this.setState({godOf:response.data.godOf});
-            this.setState({children:response.data.children});
-            this.setState({powers:response.data.powers});
+        }).then(response => {
+            this.setState({ godID: response.data.godID });
+            this.setState({ name: response.data.name });
+            this.setState({ godOf: response.data.godOf });
+            this.setState({ children: response.data.children });
+            this.setState({ powers: response.data.powers });
+            this.setState({ godImage: response.data.godImage })
             console.log(response.data);
         })
     }
-    render(){
-        let norseGods = [];
-        if(this.state.gods){
-            for(let god of this.state.gods){
-                norseGods.push(<God data = {god}/>);
-            }
-        }
-        return(
-            <div className = "Search">
-            <form onSubmit={this.update}>
-                    God : 
+    render() {
+        return (
+            <div className="Search">
+                <div className="Search-Bar">
+                    <form onSubmit={this.update}>
+                        God :
                     <input id="text" type="text" onChange={(this.handleInputID)}></input>
-                    <input type="button" onClick = {this.update} value = "Find God"></input>
-            </form>
-                    Name : {this.state.name}
+                        <input type="button" onClick={this.update} value="Find God" id="search-God-Button"></input>
+                    </form>
+
+                    Name: {this.state.name}
                     <br></br>
-                    God Of : {this.state.godOf}
+                    God Of: {this.state.godOf}
                     <br></br>
-                    Children : {this.state.children}
+                    Children: {this.state.children}
                     <br></br>
-                    Powers : {this.state.powers}
+                    Powers: {this.state.powers}
+                    <br></br>
+                </div>
+                <div className="Display-Image">
+                    Image: <img src={require("./" + this.state.godImage)} />
+                </div>
             </div>
         );
     }
