@@ -66,7 +66,7 @@
 
 .App-header {
   background-image: url("home-background.jpg");
-  background-image: repeat;
+  background-image: no-repeat center center fixed;
   background-size: cover;
   background-color: #282c34;
   min-height: 100vh;

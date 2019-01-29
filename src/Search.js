@@ -45,12 +45,11 @@ class Search extends Component {
         return (
             <div className="Search">
                 <div className="Search-Bar">
-                    <form onSubmit={this.update}>
+                    <form onSubmit={this.update} id = "Search-Form">
                         God :
-                    <input id="text" type="text" onChange={(this.handleInputID)}></input>
+                    <input id="text" type="text" onChange={(this.handleInputID)} id = "search-box-q"></input>
                         <input type="button" onClick={this.update} value="Find God" id="search-God-Button"></input>
                     </form>
-
                     Name: {this.state.name}
                     <br></br>
                     God Of: {this.state.godOf}

@@ -10,7 +10,8 @@ class Update extends Component {
             name: "",
             godOf: "",
             children: "",
-            powers: ""
+            powers: "",
+            godImage:""
         };
         this.update = this.update.bind(this);
         this.handleInputID = this.handleInputID.bind(this);
@@ -18,6 +19,7 @@ class Update extends Component {
         this.handleInputGodOf = this.handleInputGodOf.bind(this);
         this.handleInputChildren = this.handleInputChildren.bind(this);
         this.handleInputPowers = this.handleInputPowers.bind(this);
+        this.handleInputGodImage = this.handleInputGodImage.bind(this);
     }
 
     handleInputID = (event) => {
@@ -40,16 +42,20 @@ class Update extends Component {
         this.setState({powers:event.target.value});
     }
 
+    handleInputGodImage = (event) => {
+        this.setState({godImage:event.target.value});
+    }
+
      update = (event) =>{
         axios({
             method:'put',
             url: 'http://localhost:8081/Solo-Project/api/god/updateGod/' + this.state.godID,
             data: {
-                godID: this.state.godID,
                 name: this.state.name,
                 godOf: this.state.godOf,
                 children: this.state.children,
-                powers:this.state.powers
+                powers:this.state.powers,
+                godImage: this.state.godImage
             }
         });
     }
@@ -67,6 +73,8 @@ class Update extends Component {
                     <input type="text" placeholder="Children" value={this.state.children} onChange={(this.handleInputChildren)}></input>
                     <br></br>
                     <input type="text" placeholder="Powers" value={this.state.powers} onChange={(this.handleInputPowers)}></input>
+                    <br></br>
+                    <input type="text" placeholder="URL Image" value={this.state.godImage} onChange={(this.handleInputGodImage)}></input>
                     <br></br>
                     <input type="button" value="Update" onClick={this.update}></input>
                 </form>

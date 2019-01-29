@@ -12,6 +12,7 @@ class God extends Component {
         <p>Children: {this.props.data.children}</p>
         <p>God Of: {this.props.data.godOf}</p>
         <p>Powers: {this.props.data.powers}</p>
+        <p>God Image: {this.props.data.godImage}</p>
       </div>
     );
   }

@@ -9,17 +9,24 @@ class Create extends Component {
             name: "",
             godOf: "",
             children: "",
-            powers: ""
+            powers: "",
+            godImage: ""
         };
         this.update = this.update.bind(this);
         this.handleInputName = this.handleInputName.bind(this);
         this.handleInputGodOf = this.handleInputGodOf.bind(this);
         this.handleInputChildren = this.handleInputChildren.bind(this);
         this.handleInputPowers = this.handleInputPowers.bind(this);
+        this.handleInputGodImage = this.handleInputGodImage.bind(this);
+
     }
 
     handleInputName = (event) => {
         this.setState({name:event.target.value});
+    }
+
+    handleInputGodImage = (event) => {
+        this.setState({godImage:event.target.value});
     }
 
      handleInputGodOf = (event) => {
@@ -42,7 +49,8 @@ class Create extends Component {
                 name: this.state.name,
                 godOf: this.state.godOf,
                 children: this.state.children,
-                powers:this.state.powers
+                powers:this.state.powers,
+                godImage: this.state.godImage
             }
         });
     }
@@ -60,6 +68,8 @@ class Create extends Component {
                     <input type="text" placeholder="Children" value={this.state.children} onChange={(this.handleInputChildren)}></input>
                     <br></br>
                     <input type="text" placeholder="Powers" value={this.state.powers} onChange={(this.handleInputPowers)}></input>
+                    <br></br>
+                    <input type="text" placeholder="URL Image" value={this.state.godImage} onChange={(this.handleInputGodImage)}></input>
                     <br></br>
                     <input type="button" value="Create" onClick={this.update}></input>
                 </form>
