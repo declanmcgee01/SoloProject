@@ -35,7 +35,12 @@
   position: absolute;
   overflow: hidden;
   z-index: 1
-  
+}
+
+.CreateUser{
+  position: absolute;
+  overflow: hidden;
+  z-index: 1
 }
 
 /*SEARCH PAGE CSS*/
@@ -64,11 +69,13 @@
   z-index: 1;
 }
 
-.App-header {
-  background-image: url("home-background.jpg");
+html {
+    background-image: url("home-background.jpg");
   background-image: no-repeat center center fixed;
   background-size: cover;
   background-color: #282c34;
+}
+.App-header {
   min-height: 100vh;
   display: flex;
   flex-wrap: nowrap;

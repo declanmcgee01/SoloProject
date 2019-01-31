@@ -6,6 +6,7 @@ import Search from './Search';
 import Update from './Update';
 import Delete from './Delete';
 import Home from './Home';
+import CreateUser from './CreateUser';
 
 
 class NavBar extends Component {
@@ -20,6 +21,7 @@ class NavBar extends Component {
                         <li><Link to="/create">Create</Link></li>
                         <li><Link to="/update">Update</Link></li>
                         <li><Link to="/delete">Delete</Link></li>
+                        <li><Link to ="/createUser">Create User</Link></li>
                     </div>
             </div>
           <Route exact path='/home' component={Home}/>
@@ -27,6 +29,7 @@ class NavBar extends Component {
           <Route path='/create' component={Create}/>
           <Route path='/update' component={Update}/>
           <Route path='/delete' component={Delete}/>
+          <Route path='/createUser' component={CreateUser}/>
           </div>
           </BrowserRouter>
           
