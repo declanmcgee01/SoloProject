@@ -76,7 +76,7 @@ class Update extends Component {
                     <br></br>
                     <input type="text" placeholder="URL Image" value={this.state.godImage} onChange={(this.handleInputGodImage)}></input>
                     <br></br>
-                    <input type="button" value="Update" onClick={this.update}></input>
+                    <input type="button" value="Update" onClick={this.update} id = "update-button"></input>
                 </form>
             </div>
     

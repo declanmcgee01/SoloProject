@@ -31,7 +31,7 @@ class Home extends Component {
         return(
             <div className = "Home">
             <form onSubmit={this.update}>
-                    <input type="button" value = "Get all Gods" id = "Gods-Button" onClick= {this.update} id = "getAllGods-Button" ></input>
+                    <input type="button" value = "Get all Gods" id = "Gods-Button" onClick= {this.update} ></input>
                 {norseGods}
             </form>
             </div>

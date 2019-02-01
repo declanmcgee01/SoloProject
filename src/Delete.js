@@ -31,14 +31,12 @@ class Delete extends Component {
     render(){
         return(
             <div className = "Delete">
-                <div className = "Delete-header">
-                    <form>
+                    <form className = "Delete-Form">
                     <br></br>
                     <input type="text" placeholder="Delete God.." onChange={(this.handleInputID)} name="Delete" id = "Delete-Bar"></input>
-                    <input type="button" value="Submit" onClick={this.update}></input>
+                    <input type="button" value="Delete" onClick={this.update} id="delete-button"></input>
                     </form>
                 </div>
-            </div>
         );
     }
 }

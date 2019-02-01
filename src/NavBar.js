@@ -7,6 +7,7 @@ import Update from './Update';
 import Delete from './Delete';
 import Home from './Home';
 import CreateUser from './CreateUser';
+import GetUsers from './GetUsers';
 
 
 class NavBar extends Component {
@@ -22,6 +23,7 @@ class NavBar extends Component {
                         <li><Link to="/update">Update</Link></li>
                         <li><Link to="/delete">Delete</Link></li>
                         <li><Link to ="/createUser">Create User</Link></li>
+                        <li><Link to ="/getUsers">Get All Users</Link></li>
                     </div>
             </div>
           <Route exact path='/home' component={Home}/>
@@ -30,6 +32,7 @@ class NavBar extends Component {
           <Route path='/update' component={Update}/>
           <Route path='/delete' component={Delete}/>
           <Route path='/createUser' component={CreateUser}/>
+          <Route path='/getUsers' component={GetUsers}/>
           </div>
           </BrowserRouter>
           

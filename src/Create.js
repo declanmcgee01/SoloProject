@@ -71,7 +71,7 @@ class Create extends Component {
                     <br></br>
                     <input type="text" placeholder="URL Image" value={this.state.godImage} onChange={(this.handleInputGodImage)}></input>
                     <br></br>
-                    <input type="button" value="Create" onClick={this.update}></input>
+                    <input type="button" value="Create" onClick={this.update} id = "create-God-Button"></input>
                 </form>
             </div>
     

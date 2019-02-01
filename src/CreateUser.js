@@ -31,12 +31,10 @@ class CreateUser extends Component {
             data: {
                 username: this.state.username,
                 godType: this.state.godType,
-
             }
         });
     }
-
-    
+ 
     render(){
         return(
             <div className = "CreateUser">
@@ -46,7 +44,7 @@ class CreateUser extends Component {
                     <br></br>
                     <input type="text" placeholder="Favourite God Race" value={this.state.godType} onChange={(this.handleInputGodType)}></input>
                     <br></br>
-                    <input type="button" value="Create" onClick={this.update}></input>
+                    <input type="button" value="Create" onClick={this.update} id = "CreateUser-Button"></input>
                 </form>
             </div>
     
