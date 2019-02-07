@@ -59,6 +59,7 @@ class Create extends Component {
             this.setState({ 
                 message: response.data.message
             })
+            console.log(this.state.godRace)
             alert(this.state.message);
         });
 

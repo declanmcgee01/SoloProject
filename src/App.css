@@ -55,6 +55,14 @@ background-color: #ddd;
   font-size: 40px;
 }
 
+.Login{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 10px; 
+  z-index: 1;  
+}
+
 /*CREATE PAGE CSS*/
 .Create{
   display: flex;
@@ -62,6 +70,26 @@ background-color: #ddd;
   flex-wrap: nowrap;
    padding: 10px; 
    z-index: 1;  
+}
+
+.Login-Form{
+  padding: 10px;
+  width: 20%;
+  z-index: 1;
+}
+#Login-Button {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  font-family: 'norseRegular';
+  font-size: 30px;
 }
 
 .Create-Form{

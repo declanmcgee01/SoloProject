@@ -9,8 +9,6 @@ class User extends Component {
       <div className="user">
         <p>userID: {this.props.data.userID}</p>
         <p>username: {this.props.data.username}</p>
-        <p>godType: {this.props.data.godType}</p>
-
       </div>
     );
   }

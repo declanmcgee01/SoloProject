@@ -20,6 +20,7 @@ class Update extends Component {
         this.handleInputGodOf = this.handleInputGodOf.bind(this);
         this.handleInputChildren = this.handleInputChildren.bind(this);
         this.handleInputPowers = this.handleInputPowers.bind(this);
+        this.handleInputGodRace = this.handleInputGodRace.bind(this);
         this.handleInputGodImage = this.handleInputGodImage.bind(this);
     }
 
@@ -41,6 +42,10 @@ class Update extends Component {
 
     handleInputPowers = (event) => {
         this.setState({powers:event.target.value});
+    }
+
+    handleInputGodRace = (event) => {
+        this.setState({godRace:event.target.value});
     }
 
     handleInputGodImage = (event) => {
