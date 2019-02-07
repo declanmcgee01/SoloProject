@@ -11,7 +11,8 @@ class Update extends Component {
             godOf: "",
             children: "",
             powers: "",
-            godImage:""
+            godImage:"",
+            message: ""
         };
         this.update = this.update.bind(this);
         this.handleInputID = this.handleInputID.bind(this);
@@ -56,8 +57,15 @@ class Update extends Component {
                 children: this.state.children,
                 powers:this.state.powers,
                 godImage: this.state.godImage
-            }
+               }
+        })
+        .then(response => {
+            this.setState({ 
+                message: response.data.message
+            })
+            alert(this.state.message);
         });
+
     }
  
     render(){
@@ -78,6 +86,7 @@ class Update extends Component {
                     <br></br>
                     <input type="button" value="Update" onClick={this.update} id = "update-button"></input>
                 </form>
+                <br></br>
             </div>
     
         );

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Message from './Message.js'
 
 class Create extends Component {
 
@@ -10,7 +11,8 @@ class Create extends Component {
             godOf: "",
             children: "",
             powers: "",
-            godImage: ""
+            godImage: "",
+            message: ""
         };
         this.update = this.update.bind(this);
         this.handleInputName = this.handleInputName.bind(this);
@@ -52,10 +54,16 @@ class Create extends Component {
                 powers:this.state.powers,
                 godImage: this.state.godImage
             }
+        })
+        .then(response => {
+            this.setState({ 
+                message: response.data.message
+            })
+            alert(this.state.message);
         });
+
     }
 
-    
     render(){
         return(
             <div className = "Create">
@@ -73,7 +81,7 @@ class Create extends Component {
                     <br></br>
                     <input type="button" value="Create" onClick={this.update} id = "create-God-Button"></input>
                 </form>
-            </div>
+            </div>  
     
         );
     }
