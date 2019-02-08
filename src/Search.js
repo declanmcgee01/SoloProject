@@ -14,8 +14,6 @@ class Search extends Component {
             godOf: "",
             children: "",
             powers: "",
-            godRace: "",
-            textGodRace: "",
             godImage: ""
         }
         this.update = this.update.bind(this);
@@ -39,13 +37,7 @@ class Search extends Component {
             this.setState({ godOf: response.data.godOf });
             this.setState({ children: response.data.children });
             this.setState({ powers: response.data.powers });
-            this.setState({ godRace: response.data.godRace });
             this.setState({ godImage: response.data.godImage })
-            if(this.state.godRace == 1){
-                this.setState({textGodRace: "Aesir"})
-            }else{
-                this.serState({textGodRace: "Vanir"})
-            }
             console.log(response.data);
         })
     }
@@ -67,8 +59,6 @@ class Search extends Component {
                     Children: {this.state.children}
                     <br></br>
                     Powers: {this.state.powers}
-                    <br></br>
-                    God Race: {this.state.textGodRace}
                     <br></br>
                 </div>
                 <div className="Display-Image">
