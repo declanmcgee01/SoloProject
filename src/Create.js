@@ -12,6 +12,7 @@ class Create extends Component {
             children: "",
             powers: "",
             godImage: "",
+            userID: "",
             message: ""
         };
         this.update = this.update.bind(this);

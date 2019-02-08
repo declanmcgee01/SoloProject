@@ -8,7 +8,6 @@ import Delete from './Delete';
 import Home from './Home';
 import CreateUser from './CreateUser';
 import GetUsers from './GetUsers';
-import Login from './Login';
 
 
 class NavBar extends Component {
@@ -19,7 +18,6 @@ class NavBar extends Component {
             <div className = "NavBar">
                     <div className="sidenav">
                         <li><Link to="/home">Home</Link></li>
-                        <li><Link to="/login">Login</Link></li>
                         <li><Link to="/search">Search</Link></li>
                         <li><Link to="/create">Create</Link></li>
                         <li><Link to="/update">Update</Link></li>
@@ -29,7 +27,6 @@ class NavBar extends Component {
                     </div>
             </div>
           <Route exact path='/home' component={Home}/>
-          <Route path='/login' component={Login}/>
           <Route path='/search' component={Search}/>
           <Route path='/create' component={Create}/>
           <Route path='/update' component={Update}/>
